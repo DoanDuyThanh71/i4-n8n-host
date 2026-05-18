@@ -1,0 +1,13 @@
+# n8n runtime data and logs
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.log
+*.csv
+.env
+
+# Runtime folders
+n8n_data/
+binaryData/
+reup_videos/
+node_modules/
