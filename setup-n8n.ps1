@@ -1,10 +1,10 @@
 # =============================================================
 # setup-n8n.ps1 - i4M D Lab - Cài n8n 24/7 Localhost (Windows)
-# Chạy lệnh: powershell -ExecutionPolicy Bypass -File setup-n8n.ps1
+# Thư mục cài đặt cố định: C:\n8n
 # =============================================================
 
 $ErrorActionPreference = "Stop"
-$INSTALL_DIR = "$env:USERPROFILE\n8n-i4m"
+$INSTALL_DIR = "C:\n8n"          # ← Tất cả sinh viên đều cài vào đây
 $COMPOSE_VERSION = "2.14.2"
 
 function Write-Step($msg) { Write-Host "`n[STEP] $msg" -ForegroundColor Cyan }
@@ -16,7 +16,7 @@ function Write-ERR($msg)  { Write-Host " [ERR] $msg" -ForegroundColor Red; exit 
 Write-Host ""
 Write-Host "╔══════════════════════════════════════════════════╗" -ForegroundColor Magenta
 Write-Host "║     i4M D Lab - Cài Đặt n8n 24/7 Localhost     ║" -ForegroundColor Magenta
-Write-Host "║              Phiên bản: $COMPOSE_VERSION                  ║" -ForegroundColor Magenta
+Write-Host "║         Thư mục cài đặt: C:\n8n                 ║" -ForegroundColor Magenta
 Write-Host "╚══════════════════════════════════════════════════╝" -ForegroundColor Magenta
 Write-Host ""
 
@@ -172,11 +172,12 @@ Write-Host ""
 Write-Host "╔══════════════════════════════════════════════════╗" -ForegroundColor Green
 Write-Host "║           ✅  CÀI ĐẶT HOÀN TẤT!                ║" -ForegroundColor Green
 Write-Host "╠══════════════════════════════════════════════════╣" -ForegroundColor Green
-Write-Host "║  🌐 Địa chỉ  : http://localhost:5678            ║" -ForegroundColor Green
-Write-Host "║  📂 Thư mục  : $env:USERPROFILE\n8n-i4m         ║" -ForegroundColor Green
+Write-Host "║  🌐 Truy cập : http://localhost:5678            ║" -ForegroundColor Green
+Write-Host "║  📂 Thư mục  : C:\n8n                          ║" -ForegroundColor Green
 Write-Host "║  🔄 Auto-run : Bật cùng Docker Desktop (24/7)   ║" -ForegroundColor Green
 Write-Host "╠══════════════════════════════════════════════════╣" -ForegroundColor Green
-Write-Host "║  LỆNH QUẢN LÝ (chạy trong thư mục n8n-i4m):    ║" -ForegroundColor Green
+Write-Host "║  LỆNH QUẢN LÝ (mở PowerShell, chạy lệnh sau):  ║" -ForegroundColor Green
+Write-Host "║   cd C:\n8n                                     ║" -ForegroundColor Green
 Write-Host "║   Xem log   : docker compose logs -f            ║" -ForegroundColor Green
 Write-Host "║   Dừng      : docker compose down               ║" -ForegroundColor Green
 Write-Host "║   Bật lại   : docker compose up -d              ║" -ForegroundColor Green
